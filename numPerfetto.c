@@ -16,6 +16,13 @@ int main() {
             scanf("%d", &n);
         }while(n<0);
 
+        /*
+            if(!(n%2))
+                sommaN += 2;
+            else 
+                sommaN += 0;
+        */
+        
         sommaN += (!(n%2) ? 2 : 0);
 
         for(i=3; i<=n/2;i++)
