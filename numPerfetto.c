@@ -10,7 +10,7 @@ int main() {
     char continua;
 
     do{
-
+        sommaN = 1;
         do {
             printf("Inserisci un numero maggiore o uguale a 0: ");
             scanf("%d", &n);
