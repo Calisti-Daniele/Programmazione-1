@@ -13,7 +13,7 @@ int main() {
         lengthStringa = 0;
 
         printf("Inserisci la stringa: ");
-        scanf("%s", &stringa);
+        scanf("%s", stringa);
 
         //Conto il numero di caratteri effettivi della stringa
         i=0;
