@@ -36,8 +36,17 @@ int main() {
         // ||
         for(i = 0, j = lengthStringa-1; i<lengthStringa/2 && j>=lengthStringa/2 ;i++,j--)
         {
-            if(stringa[i] != stringa[j])
+            if(stringa[i] != stringa[j]) {
+                /*
+                 * Senza riportare il valore della variabile a 0
+                 * risulterà palindroma con la sola lettera
+                 * iniziale e finale uguale.
+                 * Il break è utile solo per skippare i calcoli se
+                 * almeno una lettera non è coerente.
+                 */
+                isPalindrome = 0;
                 break;
+            }
 
             isPalindrome = 1;
         }
