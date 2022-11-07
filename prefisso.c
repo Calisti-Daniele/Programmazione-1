@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+
 #define numStringhe 2
 #define maxChar 100
 int main() {
@@ -11,55 +13,37 @@ int main() {
 
     do{
         //s1 e s2 sono le lunghezze delle stringhe
-        int s1 = 0, s2 = 0, i,j, isPrefisso = 0;
+        int s1 = 0, s2 = 0, i, isPrefisso = 0;
 
         for(i=0;i<numStringhe;i++)
         {
             printf("Inserisci %d* stringa: ", (i+1));
-            scanf("%s", &stringa[i]);
+            scanf("%s", stringa[i]);
         }
 
         //Vedo quale stringa ha meno caratteri, dato che se una stringa è prefisso
         //sicuramente avrà meno caratteri
-        for(i=0;i<numStringhe; i++)
-        {
-            j = 0;
-            while(j<maxChar)
-            {
-                //Finchè non c'è il carattere terminatore
-                if(stringa[i][j] != '\0')
-                    i == 0 ? s1++ : s2++;
-                else
-                    break;
+        s1 = strlen(stringa[0]);
+        s2 = strlen(stringa[1]);
 
-                j++;
-            }
-        }
         //Da vedere se prima stringa è prefisso
-        if(s1<s2)
-        {
+        if(s1<s2) {
             for(i=0;i<s1;i++)
             {
-                if(stringa[0][i] != stringa[1][i])
+                if(stringa[0][i] != stringa[1][i]) {
+                    isPrefisso = 0;
                     break;
+                }
 
                 isPrefisso = 1;
             }
-        }else if(s2<s1) //Da vedere se seconda stringa è prefisso
-        {
+        } else { // se s2 è minore o uguale comunque la parola non supera questa lunghezza.
             for(i=0;i<s2;i++)
             {
-                if(stringa[1][i] != stringa[0][i])
+                if(stringa[1][i] != stringa[0][i]) {
+                    isPrefisso = 0;
                     break;
-
-                isPrefisso = 1;
-            }
-        }else  //Hanno stessa lunghezza, vedere se sono uguali
-        {
-            for(i=0;i<s1;i++)
-            {
-                if(stringa[0][i] != stringa[1][i])
-                    break;
+                }
 
                 isPrefisso = 1;
             }
